@@ -6,20 +6,15 @@ body {
     background-color: #eeeeee;
     color: #303030;
     font-family: 'Asap', sans-serif;
-    font-size: 1.25em;
 }
 
 .intro {
-    width: 70%;
+    width: 65%;
 }
 
 header {
     text-align: center;
     padding: 1.5em 0;
-}
-
-.text {
-    padding-bottom: 1em;
 }
 
 .right {
@@ -42,14 +37,29 @@ header {
     background: #82b4ff;
 }
 
-div.warn {
+hr {
+    margin: 2em 0em;
+}
+
+.warn {
     text-align: center;
     color: red;
     font-size: 2.5em;
+    margin: 1em;
 }
 
-.explain {
-    margin: 3em 0;
+.notcss a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.notcss a:hover {
+    animation: bounce 0.25s ease infinite alternate;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-5px);}
 }
 
 pre.code {
@@ -62,51 +72,15 @@ pre.code span.change {
     color: red;
 }
 
-.example {
-    margin: 2em 0;
+.content {
+    margin: 0 auto;
+    width: 80%;
 }
 
-.content {
+.imagecontent {
     text-align: center;
     margin: 0 auto;
-    max-width: 70%;
-}
-
-.box {
-    display: inline-block;
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 15px;
-    overflow: hidden;
-    text-align: center;
-    cursor: default;
-}
-
-img {
-    transition: all 0.5s ease-in-out;
-}
-
-.mask {
-    font-size: 0.8em;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.mask h2 {
-    background: #cccccc;
-    padding: 0.5em;
-    font-size: 1.25em;
-    margin-top: 1.5em;
-    text-transform: uppercase;
-}
-
-.mask p {
-    padding: 0.5em;
+    width: 70%;
 }
 
 .credits {
@@ -129,248 +103,56 @@ img {
     transform: scale(1.3);
 }
 
-/*push*/
-.hover-push .mask {
-    left: -100%;
-    background-color: lightblue;
+.navigation {
+    position: fixed;
+    bottom: 35%;
+    right: 0.25em;
+    font-size: 3em;
 }
 
-.hover-push:hover .mask, .hover-push:hover img {
-    transform: translateX(100%);
+.navigation a {
+    display: block;
+    color: #303030;
 }
 
-/*slide*/
-.hover-slide .mask {
-    left: -100%;
-    background-color: lightcoral;
+.navigation a:hover {
+    color: #606060;
 }
 
-.hover-slide:hover .mask {
-    transform: translateX(100%);
+@media screen and (max-width: 1600px) {
+    .imagecontent {
+        width: 75%;
+    }
 }
 
-/*fade*/
-.hover-fade .mask {
-    opacity: 0;
-    background: rgba(0,0,0,0.5);
+@media screen and (max-width: 1440px) {
+    .content {
+        width: 85%;
+    }
+
+    .imagecontent {
+        width: 80%;
+    }
 }
 
-.hover-fade p {
-    color: #eeeeee;
+@media screen and (max-width: 1366px) {
+    .imagecontent {
+        width: 85%;
+    }
 }
 
-.hover-fade:hover .mask {
-    opacity: 1;
+@media screen and (max-width: 1280px) {
+    .intro {
+        width: 80%;
+    }
+
+    .imagecontent {
+        width: 90%;
+    }
 }
 
-.hover-fade:hover img {
-    opacity: 0.5;
-}
-
-/*zoom in*/
-.hover-zoomin .mask {
-    opacity: 0;
-    background: #96deaa;
-}
-
-.hover-zoomin p, .hover-zoomin h2 {
-    transform: scale(0);
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.hover-zoomin:hover .mask {
-    opacity: 1;
-}
-
-.hover-zoomin:hover img {
-    transform: scale(5);
-}
-
-.hover-zoomin:hover p, .hover-zoomin:hover h2 {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/*zoom out*/
-.hover-zoomout .mask {
-    opacity: 0;
-    background: #96deaa;
-}
-
-.hover-zoomout p, .hover-zoomout h2 {
-    transform: scale(5);
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.hover-zoomout:hover .mask {
-    opacity: 1;
-}
-
-.hover-zoomout:hover img {
-    transform: scale(0);
-}
-
-.hover-zoomout:hover p, .hover-zoomout:hover h2 {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/*side hinge*/
-.hover-sidehinge {
-    perspective: 50em;
-}
-
-.hover-sidehinge img {
-    transform-origin: 50% 0%;
-    transition-delay: 0.1s;
-}
-
-.hover-sidehinge .mask {
-    opacity: 0;
-    background: lightyellow;
-    transform: rotateX(90deg);
-    transform-origin: 50% 100%;
-}
-
-.hover-sidehinge:hover img {
-    transform: rotateX(-90deg);
-    transition-delay: 0s;
-}
-
-.hover-sidehinge:hover .mask {
-    opacity: 1;
-    transform: rotateX(0);
-    transition-delay: 0.1s;
-}
-
-/*corner hinge*/
-.hover-cornerhinge .mask {
-    background: darksalmon;
-    transform: rotate(90deg);
-    transform-origin: 100% 100%;
-}
-
-.hover-cornerhinge:hover .mask {
-    transform: rotate(0deg);
-}
-
-/*shutterout*/
-.hover-shutterout .mask {
-    background-color: goldenrod;
-    transform: scaleX(0);
-}
-
-.hover-shutterout:hover .mask {
-    transform: scaleX(1);
-}
-
-/*shutterin*/
-.hover-shutterin .mask {
-    opacity: 0;
-    z-index: 1;
-}
-
-.hover-shutterin:after, .hover-shutterin:before {
-    background-color: bisque;
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    transition: all 0.5s ease-in-out;
-    transition-delay: 0.2s;
-}
-
-.hover-shutterin:after {
-    top: 0;
-    left: 0;
-}
-
-.hover-shutterin:before {
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-.hover-shutterin:hover .mask {
-    opacity: 1;
-    transition-delay: 0.25s;
-}
-
-.hover-shutterin:hover:after, .hover-shutterin:hover:before {
-    width: 50%;
-    transition-delay: 0s;
-}
-
-/*old school rotate*/
-.hover-spin .mask {
-    background: burlywood;
-    transform: scale(0);
-}
-
-.hover-spin img {
-    transition-delay: 0.5s;
-}
-
-.hover-spin:hover img {
-    transform: scale(0) rotate(720deg);
-    transition-delay: 0s;
-}
-
-.hover-spin:hover .mask {
-    transform: scale(1) rotate(720deg);
-    transition-delay: 0.5s;
-}
-
-/*flip*/
-.hover-flip {
-    perspective: 50em;
-}
-
-.hover-flip img {
-    backface-visibility: hidden;
-    transition-delay: 0.1s;
-}
-
-.hover-flip .mask {
-    opacity: 0;
-    background: cornflowerblue;
-    transform: rotateX(90deg);
-    transform-origin: 0% 50%;
-}
-
-.hover-flip:hover img {
-    opacity: 0;
-    transform: rotateX(-180deg);
-    transition-delay: 0s;
-}
-
-.hover-flip:hover .mask {
-    opacity: 1;
-    transform: rotateX(0deg);
-    transition-delay: 0.1s;
-}
-
-/*outline*/
-.hover-outline {
-    outline: 0px solid red;
-    outline-offset: 0px;
-    outline-color: rgba(255,0,0,1);
-    transition: all 0.5s ease-in-out;
-}
-
-.hover-outline .mask {
-    opacity: 0;
-    background-color: deepskyblue;
-}
-
-.hover-outline:hover {
-    outline: 3px solid;
-    outline-color: rgba(255,0,0,0);
-    outline-offset: 20px;
-}
-
-.hover-outline:hover .mask {
-    opacity: 1;
+@media screen and (max-width: 1024px) {
+    .imagecontent {
+        width: 80%;
+    }
 }

@@ -4,34 +4,189 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
-        <title></title>
+        <title>Simplifying CSS3 hover effects</title>
+
+        <meta name =”robots” content=”index”>
+        <meta name="description" content="Making CSS3 hover effects easier to understand">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Simplifying CSS3 hover effects">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Making CSS3 hover effects easier to understand">
+        <meta property="og:image" content="#">
+        <meta property="og:url" content="https://hohkfuyuhi.github.io/simplifying-css3-hover/">
+        <meta name="twitter:title" content="Simplifying CSS3 hover effects">
+        <meta name="twitter:description" content="Making CSS3 hover effects easier to understand">
+        <meta name="twitter:image" content="https://hohkfuyuhi.github.io/simplifying-css3-hover/thumbnail.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel=”canonical” href=”https://hohkfuyuhi.github.io/simplifying-css3-hover/”>
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="hover-image.css">
+        <link rel="stylesheet" href="hover-text.css">
     </head>
 
     <body>
-        <div class="intro container">
-            <header><h1>Explaining CSS3 hover effects</h1></header>
+        <div class="intro container" id="top">
+            <header><h1>Simplifying CSS3 hover effects</h1></header>
             <div class="text row">
                 <div class="left col-8">
                     When I started out as a front-end dev, I always had a hard time understanding how CSS3 hover effects worked, so I created this website that will hopefully make them easier to understand.<br><br>The source code for this website is available for download, and I highly recommend doing it so you can read it alongside this website.
                 </div>
                 <div class="right col-4">
                     <div class="download">
-                        <a href="https://github.com/hohkfuyuhi/explaining-css3-hover/archive/master.zip"><button type="button">Download</button></a>
-                        <br>Current version - 1.0
+                        <a href="https://github.com/hohkfuyuhi/simplifying-css3-hover/archive/master.zip"><button type="button">Download</button></a>
+                        <br>Current version - 2.0
                     </div>
                 </div>
             </div>
             <hr>
-            <div class="explain">
+            <div class="notcss">
                 <div class="warn">This is not a CSS library</div>
-                If you want a CSS3 hover library, check out <a href="https://ianlunn.github.io/Hover/">Ian Lunn's amazing hover.css library</a>. This website is merely an attempt to explain and make CSS3 hover libraries much easier to understand, and possibly implement. <del>But you can still copy and paste my code into yours I guess.</del>
+                If you want a CSS3 hover library, check out Ian Lunn's amazing <a href="https://ianlunn.github.io/Hover/" target="_blank">hover.css</a> library. This website is merely an attempt to explain and make CSS3 hover libraries much easier to understand, and possibly implement. However, if you require a quick fix, you can copy and paste my code into your document.<br><br>This website is also not a tutorial - I am assuming that you already know the basics of CSS3, or at the very least, have foundation level knowledge of the various CSS properties.<br><br>This website will be split into two sections: the first will show effects that can be applied when hovering over text, and the second will show effects that can be applied when hovering over images. Once you've gotten the hang of the various effects, you can mix and match certain effects together to create your very own custom effect!
             </div><hr>
             <div class="example">
-                In the markup example below, it's very obvious that I'm applying the hover effect on an image, but you can replace the img tag with a div tag and the effect will still work:
+                <h2 id="partone">Part one - hovering over text</h2>
+                In the markup below, the tags and their respective classes are just guidelines for you to follow, you are free to change them to anything you wish to use.
+                <pre class="code">
+&lt;div class=&quot;hover&quot;&gt;
+    &lt;span class=&quot;hover-color&quot;&gt;
+        <em>// put your content here</em>
+    &lt;/span&gt;
+&lt;/div&gt;
+</pre>
+                Some of these effects can be applied to images as well, but it is up to you to figure out how! Hover over the titles of the examples below to see the effects in action:<br><br>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-4 hover">
+                    <span class="hover-color">Colour</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Change colour with the color property</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-color-pulse">Colour pulse</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Change colours with the @keyframes rule</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-font-size">Font size</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Change font size with the font-size property</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-background">Background</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Change background colour with either the background or the background-color property</li>
+                            <li>It is also possible to put an image as the background</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-border">Border</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Base element must have the border property defined</li>
+                            <li>All border properties can be animated and changed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-glow">Glow</span>
+                    <div class="explain">
+                        <ul>
+                            <li>Use the box-shadow property to make the element itself glow</li>
+                            <li>Use the text-shadow property to make the text itself glow</li>
+                            <li>All glow properties can be animated and changed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-letter-spacing">Letter spacing</span>
+                    <div class="explain">
+                        <ul>
+                            <li>This animation is unique to text</li>
+                            <li>Change spacing with the letter-spacing property</li>
+                            <li>The margin-left property <strong>MUST BE</strong> defined and <strong>MUST HAVE</strong> the same value as the given letter-spacing property - this is so that the text will remain in place instead of shifting to the left after the animation ends</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-translate">Translate</span>
+                    <div class="explain">
+                        <ul>
+                            <li>The display property of this element <strong>MUST BE</strong> set to inline-block</li>
+                            <li>Change translation direction through the translateX() or translateY() values, or combine them into one translate() value for more complex effects.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-rotate">Rotate</span>
+                    <div class="explain">
+                        <ul>
+                            <li>The display property of this element <strong>MUST BE</strong> set to inline-block.</li>
+                            <li>Change axis of rotation by using either rotateX(), rotateY(), or rotateZ(); the number of rotations can be changed through their values</li>
+                            <li>Change origin of rotation with the transform-origin property.</li>
+                            <li>Change rotation duration with the transition property</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-underline">Underline</span>
+                    <div class="explain">
+                        <ul>
+                            <li>The display property of this element <strong>MUST BE</strong> set to inline-block</li>
+                            <li>Change underline thickness with the height property</li>
+                            <li>Change colour with either the background or background-color property</li>
+                            <li>Underline direction can be reversed by setting the right property to zero instead of left</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-highlight">Highlight</span>
+                    <div class="explain">
+                        <ul>
+                            <li>The display property of this element <strong>MUST BE</strong> set to inline-block</li>
+                            <li>The z-index property <strong>MUST BE</strong> set to -1</li>
+                            <li>The height property <strong>MUST BE</strong> set to 100%</li>
+                            <li>Change colour with either the background or background-color property</li>
+                            <li>Highlight direction can be reversed by setting the right property to zero instead of left</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4 hover">
+                    <span class="hover-color-fill">Text fill</span>
+                    <div class="explain">
+                        <ul>
+                            <li>The display property of this element <strong>MUST BE</strong> set to inline-block</li>
+                            <li>The position property of this element <strong>MUST BE</strong> set to relative</li>
+                            <li>The overflow property of the :before selector <strong>MUST BE</strong> set to hidden</li>
+                            <li>The white-space property of the :before selector <strong>MUST BE</strong> set to nowrap</li>
+                            <li>The content property of the :before selector <strong>MUST CONTAIN THE SAME VALUE</strong> as the text in this element</li>
+                            <li>This effect will only work in the left to right direction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro container">
+            <hr>
+            <div class="example">
+                <h2 id="parttwo">Part two - hovering over images</h2>
+                In the markup below, the tags and their respective classes are just guidelines for you to follow, you are free to change them to anything you wish to use.
                 <pre class="code">
 &lt;div class=&quot;box hover-push&quot;&gt;
     &lt;img src=&quot;#&quot;&gt;
@@ -40,22 +195,22 @@
     &lt;/div&gt;
 &lt;/figure&gt;
 </pre>
-                Once you've gotten the basic markup down, all that's left to do is to manipulate the effect itself through CSS. I've provided some examples in the gallery below as well - hovering over them will play the respective effects, as well as how to modify them to suit your puposes. You can also download the source code of this website (download button is at the top) and just copy-paste the effect's code  into your own document if you need a quick fix.<br><br>The best thing about these CSS3 effects is that you can combine various properties together to create your own custom effect!
+                I've provided various examples in the gallery below, and hovering over them will play the respective effects, as well as telling you how to modify them to suit your puposes. Some of these effects can be used on text too, but it is up to you to figure it out how!<br><br>
             </div>
         </div>
-        <div class="content">
+        <div class="imagecontent">
             <div class="box hover-push">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 1 - push</h2>
-                    <p>Change push direction though the translateX() and/or the translateY() values, or combine them into a single translate() value.</p>
+                    <p>Change push direction though the translateX() or translateY() values, or combine them into one translate() value for more complex effects.</p>
                 </div>
             </div>
             <div class="box hover-slide">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 2 - slide</h2>
-                    <p>Change slide direction though the translateX() and/or the translateY() values, or combine them into a single translate() value.</p>
+                    <p>Change slide direction though the translateX() or translateY() values, or combine them into one translate() value for more complex effects.</p>
                 </div>
             </div>
             <div class="box hover-fade">
@@ -69,35 +224,35 @@
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 4 - old-school spin</h2>
-                    <p>Change number of spins through the rotate() value.</p>
+                    <p>Change number of rotations through the rotate() value.</p>
                 </div>
             </div>
             <div class="box hover-zoomin">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 5 - zoom in</h2>
-                    <p>The scale() value starts at 0, then increases to 1 on hover.</p>
+                    <p>Change zoom level through the scale() value.</p>
                 </div>
             </div>
             <div class="box hover-zoomout">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 6 - zoom out</h2>
-                    <p>The scale() value starts at any number larger than 1, then decreases to 1 on hover.</p>
+                    <p>Change zoom level through the scale() value.</p>
                 </div>
             </div>
             <div class="box hover-sidehinge">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 7 - side hinge</h2>
-                    <p>Change hinge direction with the various transform-origin properties, and hinge direction though the rotate() values.</p>
+                    <p>Change hinge side with the various transform-origin properties, and hinge direction though the rotate() values.</p>
                 </div>
             </div>
             <div class="box hover-cornerhinge">
                 <img src="goose.jpg">
                 <div class="mask">
                     <h2>type 8 - corner hinge</h2>
-                    <p>Change hinge corner with the transform-origin property, and hinge direction through the rotate() value.</p>
+                    <p>Change corner with the transform-origin property, and hinge direction through the rotate() value.</p>
                 </div>
             </div>
             <div class="box hover-shutterout">
@@ -114,18 +269,46 @@
                     <p>Use scaleX() for horizontal shutter, scaleY() vertical shutter.</p>
                 </div>
             </div>
+            <div class="box hover-outlinein">
+                <img src="goose.jpg">
+                <div class="mask">
+                    <h2>type 11 - outline in</h2>
+                    <p>Change outline colour with the outline-colour property, timing with the transition property.</p>
+                </div>
+            </div>
+            <div class="box hover-outlineout">
+                <img src="goose.jpg">
+                <div class="mask">
+                    <h2>type 12 - outline out</h2>
+                    <p>Change outline colour with the outline-colour property, timing with the transition property.</p>
+                </div>
+            </div>
             <div class="box hover-flip">
                 <img src="goose.jpg">
                 <div class="mask">
-                    <h2>type 11 - flip</h2>
-                    <p>Change flip direction with the transform-origin property, and though the rotate() values.</p>
+                    <h2>type 13 - flip</h2>
+                    <p>Change axis of rotation by using either rotateX() or rotateY().</p>
                 </div>
             </div>
-            <div class="box hover-outline">
+            <div class="box hover-gleam">
                 <img src="goose.jpg">
                 <div class="mask">
-                    <h2>type 12 - outline</h2>
-                    <p>Change outline colour with the outline-colour property, timing with the transition property. (This effect works better if there is an existing border)</p>
+                    <h2>type 14 - gleam</h2>
+                    <p>Change gleam direction with any of the position properties (top, bottom, left, right)</p>
+                </div>
+            </div>
+            <div class="box hover-filter">
+                <img src="goose.jpg">
+                <div class="mask">
+                    <h2>type 15 - filter</h2>
+                    <p>Change filter type with the filter property</p>
+                </div>
+            </div>
+            <div class="box hover-box">
+                <img src="goose.jpg">
+                <div class="mask">
+                    <h2>type 16 - box</h2>
+                    <p>The properties you have to change differs depending on how you choose to animate the border, but they are largely the position, width, and height properties.</p>
                 </div>
             </div>
         </div>
@@ -135,6 +318,11 @@
                 <a href="https://hohkfuyuhi.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
                 <a href="https://github.com/hohkfuyuhi" target="_blank"><i class="fab fa-github"></i></a>
             </div>
+        </div>
+        <div class="navigation">
+            <a href="#top"><i class="fas fa-caret-square-up"></i></a>
+            <a href="#partone"><i class="fas fa-dice-one"></i></a>
+            <a href="#parttwo"><i class="fas fa-dice-two"></i></a>
         </div>
     </body>
 </html>

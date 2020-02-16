@@ -1,0 +1,156 @@
+.explain {
+    text-align: left;
+}
+
+.hover {
+    text-align: center;
+    padding: 0.5em 0.75em;
+    cursor: default;
+}
+
+.hover span {
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+/*hover-color*/
+.hover-color:hover {
+    color: red;
+}
+
+/*hover-color-pulse*/
+.hover-color-pulse:hover {
+    animation: pulse 4s ease infinite alternate;
+}
+
+@keyframes pulse {
+    25% {color: red;}
+    50% {color: green;}
+    75% {color: blue;}
+}
+
+/*hover-font-size*/
+.hover-font-size:hover {
+    font-size: 1em;
+}
+
+/*hover-background-color*/
+.hover-background {
+    padding: 0.25em 1em;
+}
+
+.hover-background:hover {
+    background-color: aquamarine;
+}
+
+/*hover-border*/
+.hover-border {
+    padding: 0em 1em;
+    border: 0px solid red;
+}
+
+.hover-border:hover {
+    border: 5px solid red;
+    border-radius: 10px;
+}
+
+/*hover-glow*/
+.hover-glow {
+    padding: 0em 1em;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 25px green;
+    text-shadow: 0 0 5px red;
+}
+
+/*hover-letter-spacing*/
+.hover-letter-spacing:hover {
+    letter-spacing: 5px;
+    margin-left: 5px;
+}
+
+/*hover-translate*/
+.hover-translate {
+    display: inline-block;
+}
+
+.hover-translate:hover {
+    transform: translate(1em, -0.5em);
+}
+
+/*hover-rotate*/
+.hover-rotate {
+    display: inline-block;
+}
+
+.hover-rotate:hover {
+    transform: rotateY(360deg);
+    transform-origin: left;
+    transition: all 2s ease;
+}
+
+/*hover-underline*/
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: red;
+    transition: width 0.5s ease;
+}
+
+.hover-underline:hover:before {
+    width: 100%;
+}
+
+/*hover-highlight*/
+.hover-highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-highlight:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background: grey;
+    transition: width 0.5s ease;
+}
+
+.hover-highlight:hover:before {
+    width: 100%;
+}
+
+/*hover-color-fill*/
+.hover-color-fill {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-color-fill:before {
+    content: "Text fill";
+    color: red;
+    position: absolute;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+
+.hover-color-fill:hover:before {
+    width: 100%;
+}

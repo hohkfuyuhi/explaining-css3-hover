@@ -1,0 +1,396 @@
+.box {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    cursor: default;
+}
+
+img {
+    transition: all 0.5s ease-in-out;
+}
+
+.mask {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.mask h2 {
+    background: #cccccc;
+    padding: 0.5em;
+    font-size: 1.25em;
+    margin-top: 1.5em;
+    text-transform: uppercase;
+}
+
+.mask p {
+    padding: 0.25em 0.5em;
+}
+
+/*push*/
+.hover-push .mask {
+    left: -100%;
+    background-color: lightblue;
+}
+
+.hover-push:hover .mask, .hover-push:hover img {
+    transform: translateX(100%);
+}
+
+/*slide*/
+.hover-slide .mask {
+    left: -100%;
+    background-color: lightcoral;
+}
+
+.hover-slide:hover .mask {
+    transform: translateX(100%);
+}
+
+/*fade*/
+.hover-fade .mask {
+    opacity: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hover-fade p {
+    color: #eeeeee;
+}
+
+.hover-fade:hover .mask {
+    opacity: 1;
+}
+
+.hover-fade:hover img {
+    opacity: 0.5;
+}
+
+/*old school rotate*/
+.hover-spin .mask {
+    background: burlywood;
+    transform: scale(0);
+}
+
+.hover-spin img {
+    transition-delay: 0.5s;
+}
+
+.hover-spin:hover img {
+    transform: scale(0) rotate(720deg);
+    transition-delay: 0s;
+}
+
+.hover-spin:hover .mask {
+    transform: scale(1) rotate(720deg);
+    transition-delay: 0.5s;
+}
+
+/*zoom in*/
+.hover-zoomin .mask {
+    opacity: 0;
+    background: #96deaa;
+}
+
+.hover-zoomin p, .hover-zoomin h2 {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover-zoomin:hover .mask {
+    opacity: 1;
+}
+
+.hover-zoomin:hover img {
+    transform: scale(5);
+}
+
+.hover-zoomin:hover p, .hover-zoomin:hover h2 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*zoom out*/
+.hover-zoomout .mask {
+    opacity: 0;
+    background: #96deaa;
+}
+
+.hover-zoomout p, .hover-zoomout h2 {
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover-zoomout:hover .mask {
+    opacity: 1;
+}
+
+.hover-zoomout:hover img {
+    transform: scale(0);
+}
+
+.hover-zoomout:hover p, .hover-zoomout:hover h2 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*side hinge*/
+.hover-sidehinge {
+    perspective: 50em;
+}
+
+.hover-sidehinge img {
+    transform-origin: 50% 0%;
+    transition-delay: 0.1s;
+}
+
+.hover-sidehinge .mask {
+    opacity: 0;
+    background: lightyellow;
+    transform: rotateX(90deg);
+    transform-origin: 50% 100%;
+}
+
+.hover-sidehinge:hover img {
+    transform: rotateX(-90deg);
+    transition-delay: 0s;
+}
+
+.hover-sidehinge:hover .mask {
+    opacity: 1;
+    transform: rotateX(0);
+    transition-delay: 0.1s;
+}
+
+/*corner hinge*/
+.hover-cornerhinge .mask {
+    background: lightyellow;
+    transform: rotate(90deg);
+    transform-origin: 100% 100%;
+}
+
+.hover-cornerhinge:hover .mask {
+    transform: rotate(0deg);
+}
+
+/*shutterout*/
+.hover-shutterout .mask {
+    background-color: goldenrod;
+    transform: scaleX(0);
+}
+
+.hover-shutterout:hover .mask {
+    transform: scaleX(1);
+}
+
+/*shutterin*/
+.hover-shutterin .mask {
+    opacity: 0;
+    z-index: 1;
+}
+
+.hover-shutterin:after, .hover-shutterin:before {
+    background-color: goldenrod;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.hover-shutterin:after {
+    top: 0;
+    left: 0;
+}
+
+.hover-shutterin:before {
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hover-shutterin:hover .mask {
+    opacity: 1;
+    transition-delay: 0.25s;
+}
+
+.hover-shutterin:hover:after, .hover-shutterin:hover:before {
+    width: 50%;
+    transition-delay: 0s;
+}
+
+/*flip*/
+.hover-flip {
+    perspective: 50em;
+}
+
+.hover-flip img {
+    backface-visibility: hidden;
+    transition-delay: 0.1s;
+}
+
+.hover-flip .mask {
+    opacity: 0;
+    background: cornflowerblue;
+    transform: rotateX(90deg);
+}
+
+.hover-flip:hover img {
+    opacity: 0;
+    transform: rotateX(-180deg);
+    transition-delay: 0s;
+}
+
+.hover-flip:hover .mask {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transition-delay: 0.1s;
+}
+
+/*hover-outlineout*/
+.hover-outlineout {
+    outline: 3px solid red;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover-outlineout .mask {
+    opacity: 0;
+    background: deepskyblue;
+}
+
+.hover-outlineout:hover {
+    outline: 3px solid;
+    outline-color: rgba(255,0,0,0);
+    outline-offset: 20px;
+}
+
+.hover-outlineout:hover .mask {
+    opacity: 1;
+}
+
+/*hover-outlinein*/
+.hover-outlinein {
+    outline: 3px solid;
+    outline-color: rgba(255,0,0,0);
+    outline-offset: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover-outlinein .mask {
+    opacity: 0;
+    background: deepskyblue;
+}
+
+.hover-outlinein:hover {
+    outline: 3px solid red;
+    outline-offset: 0px;
+}
+
+.hover-outlinein:hover .mask {
+    opacity: 1;
+}
+
+/*hover-gleam*/
+.hover-gleam .mask {
+    opacity: 0;
+    background-color: darksalmon;
+}
+
+.hover-gleam:before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    transform: skewX(-25deg);
+}
+
+.hover-gleam:hover:before {
+    animation: shine 0.75s;
+}
+
+.hover-gleam:hover .mask {
+    opacity: 1;
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+/*hover-filter*/
+.hover-filter .mask {
+    opacity: 0;
+}
+
+.hover-filter:hover img {
+    filter: sepia(100%);
+}
+
+.hover-filter:hover .mask {
+    opacity: 1;
+}
+
+/*hover-box*/
+.hover-box:before, .hover-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.hover-box:before {
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.hover-box:after {
+    right: 0;
+    bottom: 0;
+}
+
+.hover-box:before {
+    border-top: 3px solid red;
+    border-left: 3px solid red;
+}
+
+.hover-box:after {
+    border-bottom: 3px solid red;
+    border-right: 3px solid red;
+}
+
+.hover-box .mask {
+    opacity: 0;
+    background-color: darkturquoise;
+}
+
+.hover-box:hover:before {
+    height: 20%;
+    width: 20%;
+    transition: all 0.5s ease;
+}
+
+.hover-box:hover:after {
+    height: 20%;
+    width: 20%;
+}
+
+.hover-box:hover .mask {
+    opacity: 1;
+}
