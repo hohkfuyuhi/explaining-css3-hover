@@ -3,9 +3,10 @@ A simple website that will hopefully make CSS3 hover effects easier to understan
 _____
 **VER 2.0 | 16/02/20**
 - *changes:*
-  1. added new content
-  2. added Open Graph and Twitter Card meta tags
-  3. added media queries
+  1. changed URL
+  2. added new content
+  3. added Open Graph and Twitter Card meta tags
+  4. added media queries
 _____
 **VER 1.0 | 08/02/20**
 - Website created!
