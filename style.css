@@ -23,6 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1em 0em;
 }
 
 .download button {
@@ -39,7 +40,7 @@ header {
 }
 
 hr {
-    margin: 2em 0em;
+    margin: 1em 0em;
 }
 
 .warn {
@@ -137,6 +138,10 @@ pre.code span.change {
 }
 
 @media screen and (max-width: 1366px) {
+    body {
+        font-size: 1em;
+    }
+    
     .imagecontent {
         width: 85%;
     }
@@ -155,5 +160,16 @@ pre.code span.change {
 @media screen and (max-width: 1024px) {
     .imagecontent {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .intro {
+        width: 100%;
+    }
+    
+    .navigation {
+        bottom: 0%;
+        font-size: 2.5em;
     }
 }
